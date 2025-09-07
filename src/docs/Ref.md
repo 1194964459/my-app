@@ -4,7 +4,7 @@ CreateRef（类组件） 与 useRef（函数式组件）：两者都是用于**�
 
 需注意：
 * 函数组件无实例
-* ref.current仅在组件挂载后才会指向 DOM/组件实例，挂载前为null，需避免在render或useEffect（无依赖）中直接访问。
+* ref.current仅在组件挂载后才会指向 DOM 或 组件实例，挂载前为null，需避免在render或useEffect（无依赖）中直接访问。
 
 ### 一、持久化
 **ref 的持久化**：
