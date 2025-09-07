@@ -5,11 +5,14 @@ import './index.css'
 import SetStateInitial from './hooks/setState_初始化的值是函数'
 import ForwardRefImper from './code/forwardRef_useImperativeHandle'
 import ForwardRef from './code/forwardRef'
+import GetDerivedStateFromProps from './code/getDerivedStateFromProps'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     {/* <SetStateInitial /> */}
-    <ForwardRef />
+    {/* <ForwardRef /> */}
+
+    <GetDerivedStateFromProps />
   </StrictMode>,
 )
