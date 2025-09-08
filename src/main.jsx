@@ -8,6 +8,7 @@ import ForwardRef from './code/forwardRef'
 import GetDerivedStateFromProps from './code/getDerivedStateFromProps'
 import FuncFirst from './code/函数组件/首次渲染'
 import ClassFirst from './code/类组件/首次渲染'
+import EleIsObj from './code/渲染元素属性为对象'
 
 
 createRoot(document.getElementById('root')).render(
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
     {/* <GetDerivedStateFromProps /> */}
     {/* <ClassFirst /> */}
     {/* <FuncFirst /> */}
+    <EleIsObj />
 
   </StrictMode>,
 )
