@@ -1,5 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'; // 提供store
+import { store } from './code/redux/toolkit/index';
+import ReduxCounter from './code/redux/toolkit/jsx/函数_Counter'
+import ClassReduxCounter from './code/redux/toolkit/jsx/类_Counter'
+
 import './index.css'
 // import App from './App.jsx'
 import SetStateInitial from './hooks/setState_初始化的值是函数'
@@ -12,7 +17,7 @@ import EleIsObj from './code/渲染元素属性为对象'
 import Event22 from './code/React事件'
 import UnControl from './code/_非受控组件'
 import ControlCom from './code/_受控组件'
-
+// import ReduxToolkit from './code/redux/redux-toolkit'
 
 
 createRoot(document.getElementById('root')).render(
@@ -26,8 +31,13 @@ createRoot(document.getElementById('root')).render(
     {/* <FuncFirst /> */}
     {/* <EleIsObj /> */}
     {/* <Event22 /> */}
-    <UnControl />
-    <ControlCom />
+    {/* <UnControl />
+    <ControlCom /> */}
+
+    <Provider store={store}>   {/* 所有子组件可访问store */}
+      {/* <ReduxCounter /> */}
+      <ClassReduxCounter />
+    </Provider>
 
   </StrictMode>,
 )

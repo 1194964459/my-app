@@ -1,36 +1,43 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { configureStore, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const counterSlice = createSlice({
-    name: 'counter',
-    initialState: {
-        value: 0
-    },
-    reducers: {
-        incremented: state => {
-            // Redux Toolkit 允许在 reducers 中编写 "mutating" 逻辑。
-            // 它实际上并没有改变 state，因为使用的是 Immer 库，检测到“草稿 state”的变化并产生一个全新的
-            // 基于这些更改的不可变的 state。
-            state.value += 1
-        },
-        decremented: state => {
-            state.value -= 1
-        }
+// 异步 Action（获取用户）
+const fetchUser = createAsyncThunk(
+    'user/fetchUser',
+    async (userId) => {
+        const res = await fetch(`/api/users/${userId}`);
+        return res.json();
     }
-})
+);
 
-export const { incremented, decremented } = counterSlice.actions
+// 创建 Slice（包含 Reducer 和 Action）
+const userSlice = createSlice({
+    name: 'user', // 命名空间（自动作为 Action 类型前缀）
+    initialState: { data: null, loading: false },
+    reducers: {
+        // 同步 Action 处理
+        clearUser: (state) => {
+            state.data = null; // RTK 内部使用 Immer 库，可“直接修改”状态（实际是生成新状态）
+        }
+    },
+    // 处理异步 Action 的结果
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchUser.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchUser.fulfilled, (state, action) => {
+                state.data = action.payload;
+                state.loading = false;
+            });
+    }
+});
 
+// 导出 Action Creator
+export const { clearUser } = userSlice.actions;
+
+// 创建 Store
 const store = configureStore({
-    reducer: counterSlice.reducer
-})
-
-// 可以订阅 store
-store.subscribe(() => console.log(store.getState()))
-
-// 将我们所创建的 action 对象传递给 `dispatch`
-store.dispatch(incremented())
-// {value: 1}
-store.dispatch(incremented())
-// {value: 2}
-store.dispatch(decremented())
-// {value: 1}
+    reducer: {
+        user: userSlice.reducer
+    }
+});
