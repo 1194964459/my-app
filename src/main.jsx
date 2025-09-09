@@ -9,6 +9,10 @@ import GetDerivedStateFromProps from './code/getDerivedStateFromProps'
 import FuncFirst from './code/函数组件/首次渲染'
 import ClassFirst from './code/类组件/首次渲染'
 import EleIsObj from './code/渲染元素属性为对象'
+import Event22 from './code/React事件'
+import UnControl from './code/_非受控组件'
+import ControlCom from './code/_受控组件'
+
 
 
 createRoot(document.getElementById('root')).render(
@@ -20,7 +24,10 @@ createRoot(document.getElementById('root')).render(
     {/* <GetDerivedStateFromProps /> */}
     {/* <ClassFirst /> */}
     {/* <FuncFirst /> */}
-    <EleIsObj />
+    {/* <EleIsObj /> */}
+    {/* <Event22 /> */}
+    <UnControl />
+    <ControlCom />
 
   </StrictMode>,
 )
