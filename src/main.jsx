@@ -17,7 +17,12 @@ import EleIsObj from './code/渲染元素属性为对象'
 import Event22 from './code/React事件'
 import UnControl from './code/_非受控组件'
 import ControlCom from './code/_受控组件'
-// import ReduxToolkit from './code/redux/redux-toolkit'
+import ThisOfClassMethod from './code/类组件/方法中的this'
+// import VarClosure from './code/变量闭包'
+import SetTimeoutClosure from './code/闭包陷阱/1_setTimeout'
+import SetTimeoutClosureRev from './code/闭包陷阱/1_setTimeout_解决'
+import SetTimeoutClosureRev2 from './code/闭包陷阱/1_setTimeout_解决2'
+import AddEventLis from './code/闭包陷阱/2_addEventListener'
 
 
 createRoot(document.getElementById('root')).render(
@@ -34,10 +39,19 @@ createRoot(document.getElementById('root')).render(
     {/* <UnControl />
     <ControlCom /> */}
 
-    <Provider store={store}>   {/* 所有子组件可访问store */}
-      {/* <ReduxCounter /> */}
+    {/* 所有子组件可访问store */}
+    {/* <Provider store={store}>
+      <ReduxCounter />
       <ClassReduxCounter />
-    </Provider>
+    </Provider> */}
+
+    {/* <ThisOfClassMethod /> */}
+
+    {/* <VarClosure initialValue="0" /> */}
+    {/* <SetTimeoutClosure /> */}
+    {/* <SetTimeoutClosureRev /> */}
+    {/* <SetTimeoutClosureRev2 /> */}
+    <AddEventLis />
 
   </StrictMode>,
 )
