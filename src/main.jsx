@@ -23,7 +23,8 @@ import SetTimeoutClosure from './code/闭包陷阱/1_setTimeout'
 import SetTimeoutClosureRev from './code/闭包陷阱/1_setTimeout_解决'
 import SetTimeoutClosureRev2 from './code/闭包陷阱/1_setTimeout_解决2'
 import AddEventLis from './code/闭包陷阱/2_addEventListener'
-
+// import VirtualScroll from './虚拟滚动/VariableSizeList'
+import VirtualScroll from './虚拟滚动/row'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -51,7 +52,9 @@ createRoot(document.getElementById('root')).render(
     {/* <SetTimeoutClosure /> */}
     {/* <SetTimeoutClosureRev /> */}
     {/* <SetTimeoutClosureRev2 /> */}
-    <AddEventLis />
+    {/* <AddEventLis /> */}
+
+    <VirtualScroll />
 
   </StrictMode>,
 )

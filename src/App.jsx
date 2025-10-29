@@ -10,6 +10,7 @@ import React from 'react'
 import Shallow from './code/浅比较'
 import ClassCmt from './code/类组件'
 
+
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -109,8 +110,9 @@ class AA extends React.Component {
 function App() {
   // return <AA />
   // return <ClassCmt />
-  return <SSS />
+  // return <SSS />
   // return <Shallow />
+  return <VirtualScroll />
 }
 
 export default App
