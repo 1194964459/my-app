@@ -25,6 +25,7 @@ import SetTimeoutClosureRev2 from './code/闭包陷阱/1_setTimeout_解决2'
 import AddEventLis from './code/闭包陷阱/2_addEventListener'
 // import VirtualScroll from './虚拟滚动/VariableSizeList'
 import VirtualScroll from './虚拟滚动/row'
+import FuncComInitial from './code/函数组件/初始值'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -54,7 +55,8 @@ createRoot(document.getElementById('root')).render(
     {/* <SetTimeoutClosureRev2 /> */}
     {/* <AddEventLis /> */}
 
-    <VirtualScroll />
+    {/* <VirtualScroll /> */}
+    <FuncComInitial />
 
   </StrictMode>,
 )

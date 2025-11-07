@@ -39,7 +39,7 @@ export default function EventOrderDemo() {
     };
 
     const handleChildReactClick = (e) => {
-        e.stopPropagation()
+        e.stopPropagation() // 合成事件中取消冒泡，仅仅只影响他上层的合成事件
 
         console.log('React: 子元素 onClick');
     };
@@ -86,5 +86,12 @@ React: 父元素 onClick
  * 
  * 以下两项不触发了：
  *      父组件的原生冒泡
- *      合成事件不会触发了！
+ *      两个合成事件 不会触发了！
+ */
+
+/**
+ * 合成事件中取消冒泡：仅仅只影响DOM上层的合成事件
+ * 
+ * 子元素的合成事件取消冒泡：
+ *      父元素的合成事件不触发了，但是不影响原生事件
  */
